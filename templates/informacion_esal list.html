@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h2 class="mb-4">Información ESAL</h2>
+<form method="POST" enctype="multipart/form-data" class="mb-4">
+    <div class="input-group">
+        <input type="file" class="form-control" name="file" accept="application/pdf">
+        <button class="btn btn-primary" type="submit">Subir PDF</button>
+    </div>
+</form>
+<div class="row">
+    {% for archivo in archivos %}
+    <div class="col-md-4 mb-3 text-center">
+        <a href="{{ url_for('uploaded_file', filename=archivo) }}" target="_blank">{{ archivo }}</a>
+    </div>
+    {% else %}
+    <p class="text-muted">No hay archivos subidos.</p>
+    {% endfor %}
+</div>
+{% endblock %}

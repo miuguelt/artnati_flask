@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .esal-main-container {
+        max-width: 950px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 6px 32px 0 rgba(0,0,0,0.13), 0 2px 8px 0 rgba(0,0,0,0.10);
+        padding: 2.5rem 2rem 2rem 2rem;
+    }
+    .esal-upload-card {
+        border-radius: 1rem;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
+        border: 1.5px solid #e0e0e0;
+        background: #f9fafd;
+        transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .esal-upload-card:hover {
+        box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.12);
+        border-color: #007bff;
+    }
+    .esal-pdf-icon {
+        font-size: 2.7rem;
+        color: #e74c3c;
+        margin-bottom: 0.7rem;
+    }
+    .esal-filename {
+        font-weight: 500;
+        color: #222;
+        word-break: break-all;
+        margin-bottom: 0.7rem;
+    }
+    .esal-actions {
+        display: flex;
+        justify-content: center;
+        gap: 0.7rem;
+    }
+    .esal-upload-form {
+        border-radius: 1rem;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+        border: 1.5px solid #e0e0e0;
+        background: #f8f9fa;
+        padding: 1.5rem 2rem;
+        margin-bottom: 2rem;
+    }
+</style>
+
+<div class="esal-main-container">
+    <h2 class="mb-4 text-center text-primary fw-bold" style="letter-spacing:1px;">Información ESAL</h2>
+    <form method="POST" enctype="multipart/form-data" class="esal-upload-form mx-auto" style="max-width: 500px;">
+        <div class="input-group">
+            <input type="file" class="form-control" name="file" accept="application/pdf">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-upload me-1"></i> Subir PDF
+            </button>
+        </div>
+    </form>
+    <div class="row g-4">
+        {% for archivo in archivos %}
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="esal-upload-card w-100 p-4 d-flex flex-column align-items-center justify-content-between">
+                <div class="esal-pdf-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="esal-filename">{{ archivo }}</div>
+                <div class="esal-actions">
+                    <a href="{{ url_for('uploaded_file', filename=archivo) }}" target="_blank" class="btn btn-outline-primary btn-sm" title="Ver PDF">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <form action="/eliminar-archivo/{{ archivo }}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-outline-danger btn-sm" title="Eliminar" onclick="return confirm('¿Estás seguro de que deseas eliminar este archivo?')">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <p class="text-muted text-center">No hay archivos subidos.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

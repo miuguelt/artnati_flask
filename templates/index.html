@@ -1,0 +1,49 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% block content %}
+<header class="hero-section">
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-wrap="true">
+        <div class="carousel-inner rounded-bottom-4 shadow">
+            <div class="carousel-item active">
+                <div class="carousel-image-container">
+                    <img src="{{ url_for('static', filename='img/img1.avif') }}" class="d-block w-100" alt="Arte y Cultura">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-image-container">
+                    <img src="{{ url_for('static', filename='img/img2.avif') }}" class="d-block w-100" alt="Música y Tradición">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-image-container">
+                    <img src="{{ url_for('static', filename='img/img3.avif') }}" class="d-block w-100" alt="Servicios Culturales">
+                </div>
+            </div>
+        </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+<main class="container">
+    <section class="welcome-section py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 text-center">
+                <h1 class="display-4 mb-4">¡Trabajamos por la cultura!</h1>
+                <p class="lead">
+                    Corporación para la Defensa, Promoción, Desarrollo y Difusión de las
+                    Culturas y el Arte Nativo.
+                </p>
+                <p class="text-muted">
+                    Nit: 900474797-1
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

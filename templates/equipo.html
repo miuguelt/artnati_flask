@@ -1,0 +1,56 @@
+<!-- equipo.html -->
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-4">
+    <!-- Banner tipo carrusel con 10 imágenes -->
+    <div id="equipoCarousel" class="carousel slide mb-5 shadow" data-bs-ride="carousel">
+        <div class="carousel-inner rounded-4">
+            {% for i in range(1, 11) %}
+            <div class="carousel-item {% if i == 1 %}active{% endif %}">
+                <img src="{{ url_for('static', filename='img/img' ~ i ~ '.avif') }}" class="d-block w-100" style="object-fit:cover; height:400px;" alt="Foto equipo {{ i }}">
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#equipoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#equipoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Lista de reproducción de MP3 -->
+    <div class="card shadow-lg p-4 mb-4">
+        <h3 class="mb-3 text-primary"><i class="fas fa-music me-2"></i>Lista de reproducción</h3>
+        <ul class="list-group mb-3" id="mp3-list">
+            {% for file in mp3_files %}
+            <li class="list-group-item d-flex justify-content-between align-items-center mp3-item" data-src="{{ url_for('static', filename='mp3/' ~ file) }}">
+                <span><i class='fas fa-play-circle text-success me-2'></i>{{ file }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <audio id="audio-player" controls style="width:100%;">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+</div>
+
+<script>
+const list = document.getElementById('mp3-list');
+const player = document.getElementById('audio-player');
+if(list) {
+    list.querySelectorAll('.mp3-item').forEach(li => {
+        li.onclick = () => {
+            player.src = li.getAttribute('data-src');
+            player.play();
+            list.querySelectorAll('.mp3-item').forEach(el => el.classList.remove('active'));
+            li.classList.add('active');
+        };
+    });
+}
+</script>
+
+{% endblock %}

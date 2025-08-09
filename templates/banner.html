@@ -1,0 +1,37 @@
+{# banner.html - Banner reutilizable para todas las vistas #}
+<div id="mainCarousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false">
+    <div class="carousel-inner rounded-bottom-4 shadow">
+        <div class="carousel-item active">
+            <div class="carousel-image-container">
+                <img src="{{ url_for('static', filename='img/img1.avif') }}" class="d-block w-100" alt="Arte y Cultura">
+            </div>
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <img src="{{ url_for('static', filename='img/logo.avif') }}" alt="ARTNATI Logo" class="carousel-logo">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-image-container">
+                <img src="{{ url_for('static', filename='img/img2.avif') }}" class="d-block w-100" alt="Música y Tradición">
+            </div>
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <img src="{{ url_for('static', filename='img/logo.avif') }}" alt="ARTNATI Logo" class="carousel-logo">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-image-container">
+                <img src="{{ url_for('static', filename='img/img3.avif') }}" class="d-block w-100" alt="Servicios Culturales">
+            </div>
+            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                <img src="{{ url_for('static', filename='img/logo.avif') }}" alt="ARTNATI Logo" class="carousel-logo">
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>

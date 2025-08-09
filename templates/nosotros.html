@@ -1,0 +1,43 @@
+<!-- nosotros.html -->
+{% extends 'base.html' %}
+{% block content %}
+<main class="container py-5">
+    <section class="text-center mb-5">
+        <img src="{{ url_for('static', filename='img/logo.avif') }}" alt="ARTNATI Logo" class="img-fluid rounded shadow mb-4" style="max-width: 150px;">
+        <h1 class="display-4 text-primary">¿QUIÉNES SOMOS?</h1>
+        <p class="lead">
+            La corporación ARTNATI está conformada por un equipo interdisciplinario de profesionales en artes; con amplia experiencia en los campos de la gestión cultural, la planeación estratégica y la formación. Nuestra experiencia trabajando en los sectores público y privado garantiza el logro de los objetivos en las actividades de aprendizaje, ejecución de proyectos, y gestión y promoción de servicios culturales.
+        </p>
+    </section>
+
+    <section class="mb-5">
+        <div class="ratio ratio-16x9 shadow rounded">
+            <iframe 
+                src="https://www.youtube.com/embed/5POTUUJq-t8" 
+                title="Elberto Ariza - Video Institucional" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section class="row gx-5">
+        <div class="col-md-6 mb-4">
+            <div class="p-4 bg-light rounded-3 shadow-sm h-100">
+                <h2 class="h3 text-primary mb-3">MISIÓN QUE NOS MOTIVA</h2>
+                <p>
+                    Inspirar, propiciar y habilitar procesos culturales transformadores en las organizaciones y comunidades, de tal manera que aseguren la efectividad y sostenibilidad, para que ejerzan su función generadora de progreso y bienestar.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="p-4 bg-light rounded-3 shadow-sm h-100">
+                <h2 class="h3 text-primary mb-3">NUESTRA VISIÓN</h2>
+                <p>
+                    Para el año 2020 ARTNATI será la ONG líder en la prestación de servicios en el campo de la cultura, reconocida por su decisivo aporte a la evolución exitosa de las organizaciones y comunidades con las cuales trabaja, y a su valiosa participación en la construcción de tejido social.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

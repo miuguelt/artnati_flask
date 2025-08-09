@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-5">NUESTROS SERVICIOS</h1>
+    
+    <!-- Sección principal de oferta de valor -->
+    <div class="row mb-5">
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='img/logo.avif') }}" alt="ARTNATI Logo" class="img-fluid mb-3">
+        </div>
+        <div class="col-md-9">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p class="card-text">
+                        Incremento de la capacidad de las organizaciones públicas y privadas para lograr resultados extraordinarios, 
+                        mediante: Orientación y acompañamiento en la Gestión de planes, programas, proyectos culturales y actividades 
+                        artísticas.
+                    </p>
+                    <p class="card-text">
+                        Generación de soluciones con construcción y transferencia de conocimientos y metodologías, generando aprendizaje 
+                        transformador, innovación y sostenibilidad.
+                    </p>
+                    <p class="card-text">
+                        Influencia valorada en la formulación e implementación de políticas públicas en el campo cultural para el desarrollo 
+                        exitoso de las organizaciones.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Gestión Cultural -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">Gestión Cultural</h2>
+                    <p class="card-text">
+                        Asesoría y consultoría en planificación estratégica y gestión cultural:
+                    </p>
+                    <ul>
+                        <li>Formulación e implementación de planes estratégicos de cultura</li>
+                        <li>Asesorías jurídicas en el sector cultural</li>
+                        <li>Formulación y gestión de proyectos culturales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ url_for('static', filename='img/img1.avif') }}" alt="Gestión Cultural" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+
+    <!-- Sección de Formación Artística -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">Formación Artística</h2>
+                    <p class="card-text">
+                        Formación en diferentes áreas de las artes entre las cuales contamos:
+                    </p>
+                    <ul>
+                        <li>Programas de formación de artes musicales: orquesta sinfónica, banda sinfónica, coros, músicas tradicionales y músicas populares urbanas</li>
+                        <li>Programas en artes escénicas: teatro, danzas tradicionales, danza contemporánea y danza recreativa</li>
+                        <li>Programas en artes plásticas y visuales: dibujo, pintura, escultura y fotografía</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ url_for('static', filename='img/img2.avif') }}" alt="Formación Artística" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+
+    <!-- Sección de Eventos y Actividades -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">Eventos y Actividades</h2>
+                    <p class="card-text">
+                        Trabajamos en la Coordinación y la realización de eventos y actividades culturales:
+                    </p>
+                    <ul>
+                        <li>Asesoría, planificación y realización de ferias</li>
+                        <li>Organización de fiestas y festivales</li>
+                        <li>Gestión de concursos culturales</li>
+                        <li>Coordinación de eventos artísticos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ url_for('static', filename='img/img3.avif') }}" alt="Eventos Culturales" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+
+    <!-- Sección de Eventos y Actividades -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">Coordinación de Eventos</h2>
+                    <p class="card-text">
+                        Trabajamos en la Coordinación y la realización de eventos y actividades culturales:
+                    </p>
+                    <p class="card-text">
+                        Asesoría, planificación y realización de ferias y fiestas, festivales, concursos entre otros.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ url_for('static', filename='img/img8.avif') }}" alt="Eventos Culturales" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+
+    <!-- Sección de Orquesta Filarmónica -->
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-primary">Orquesta Filarmónica Infantil y Juvenil</h2>
+                    <h3 class="h5 text-secondary">Provincia de Velez</h3>
+                    <p class="card-text">
+                        Evento apoyado por el Ministerio de Cultura,<br>
+                        Programa Nacional de Concertación Cultural<br>
+                        Convenio 1989/13
+                    </p>
+                    <div class="mt-3">
+                        <img src="{{ url_for('static', filename='img/img15.avif') }}" alt="MinCultura" class="img-fluid me-3" style="max-height: 50px;">
+                        <img src="{{ url_for('static', filename='img/img16.avif') }}" alt="Prosperidad para Todos" class="img-fluid" style="max-height: 50px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ url_for('static', filename='img/img20.avif') }}" alt="Orquesta Filarmónica" class="img-fluid rounded shadow-sm">
+        </div>
+    </div>
+
+    <!-- Información de Contacto -->
+    <div class="text-center">
+        <p class="text-muted">
+            <small>Corporación para la Defensa, Promoción, Desarrollo y Difusión de las Culturas y el Arte</small><br>
+            <small>NIT: 900474737-1</small>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

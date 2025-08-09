@@ -1,0 +1,143 @@
+/* Variables globales */
+:root {
+    --primary-color: #800000;
+    --secondary-color: #c0392b;
+    --accent-color: #ffc107;
+    --text-light: #ffffff;
+    --text-dark: #343a40;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Navegación */
+.navbar {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand, .nav-link-artnati {
+    color: var(--text-light) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-link-artnati:hover, .nav-link-artnati.active {
+    background: var(--accent-color);
+    color: var(--primary-color) !important;
+    border-radius: 25px;
+}
+
+/* Hero Section y Carousel */
+.hero-section {
+    margin-bottom: 2rem;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+/* Carousel estilos */
+.carousel {
+    margin-bottom: 2rem;
+}
+
+.carousel-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
+.carousel-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-logo {
+    max-width: 180px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.8;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .navbar-brand span {
+        font-size: 1.1rem;
+    }
+    .nav-link-artnati {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem !important;
+    }
+    .carousel-logo {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-image-container {
+        padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    }
+    .carousel-logo {
+        max-width: 120px;
+    }
+    .carousel-caption {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-image-container {
+        padding-bottom: 100%; /* 1:1 Aspect Ratio */
+    }
+    .carousel-logo {
+        max-width: 100px;
+    }
+    .carousel-caption {
+        padding: 0.5rem;
+    }
+}
